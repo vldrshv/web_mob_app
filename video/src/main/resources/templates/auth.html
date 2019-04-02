@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <link href="css/auth.css" rel="stylesheet">
+</head>
+<body>
+<hgroup>
+    <div class="avatar">
+        <img src="/avatar.png">
+    </div>
+    <h1>Sign for free</h1>
+</hgroup>
+
+<form action="#" th:action="@{/user}" method="post" th:object="${user}">
+    <div class="group">
+        <input type="text"><span class="highlight"></span><span class="bar"></span>
+        <label>Email</label>
+    </div>
+    <div class="group">
+        <input type="password"><span class="highlight"></span><span class="bar"></span>
+        <label>Password</label>
+    </div>
+    <button type="submit" value="submit" name="submit" class="button buttonBlue card">Submit
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+</form>
+<footer>
+    <p>
+        <a href="/password" target="_blank">Forgot password?</a>
+    </p>
+
+
+    <button class="button buttonWhite card" onclick="location.href='/newUser'"/>
+    New user
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+</footer>
+</body>
+</html>
