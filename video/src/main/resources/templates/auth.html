@@ -12,14 +12,13 @@
     </div>
     <h1>Sign for free</h1>
 </hgroup>
-
 <form action="#" th:action="@{/user}" method="post" th:object="${user}">
     <div class="group">
-        <input type="text"><span class="highlight"></span><span class="bar"></span>
+        <input type="email" th:field="*{email}"><span class="highlight"></span><span class="bar"></span>
         <label>Email</label>
     </div>
     <div class="group">
-        <input type="password"><span class="highlight"></span><span class="bar"></span>
+        <input type="password" th:field="*{password}"><span class="highlight"></span><span class="bar"></span>
         <label>Password</label>
     </div>
     <button type="submit" value="submit" name="submit" class="button buttonBlue card">Submit

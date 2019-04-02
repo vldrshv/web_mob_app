@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 @Controller
 class ApplicationController {
     var logger: Logger = Logger.getAnonymousLogger()
+    var currentUser: User? = null;
 
     @GetMapping("/newUser")
     fun newUser(model: Model): String {
@@ -30,7 +31,7 @@ class ApplicationController {
     @RequestMapping("/")
     fun auth(model: Model): String {
         logger.info("authentication")
-        //model.addAttribute("user", User())
+        model.addAttribute("user", User())
 
         return "auth"
     }
@@ -44,11 +45,25 @@ class ApplicationController {
     }
 
     @RequestMapping("/user")
-    fun validateUser(model: Model): String {
+    fun validateUser(@ModelAttribute user: User, model: Model): String {
         logger.info("validate")
-        model.addAttribute("user", User())
+        if (user?.email.equals("vldrshv@gmail.com") && user?.password.equals("1234")) {
+            currentUser = user
+            return "redirect:main_page"
+        }
 
+        //model.addAttribute("user", User())
+        model.addAttribute("error", "error")
         return "auth"
+    }
+
+    @RequestMapping("/main_page")
+    fun mainPage(@ModelAttribute user: User, model: Model): String {
+        logger.info("main_page")
+
+        model.addAttribute("user", currentUser)
+        logger.info(currentUser.toString())
+        return "main_page"
     }
 
 }

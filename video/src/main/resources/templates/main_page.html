@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <link href="css/auth.css" rel="stylesheet">
+</head>
+<body>
+
+<p> ЙУХУ </p>
+<div th:object="${user}">
+    <span th:text="*{email}"></span>
+</div>
+
+</body>
+</html>
