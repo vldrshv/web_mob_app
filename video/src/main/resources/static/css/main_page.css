@@ -1,0 +1,79 @@
+.card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,.1);
+}
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,.1);
+}
+
+.chart{
+    height: 200px;
+    width: 400px;
+}
+
+.form {
+    display: inline-table;
+    width: fit-content;
+    min-width: 25%;
+    padding: 2em 2em 2em 2em;
+    margin: 0.5em;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+}
+body {
+    font-family: Helvetica;
+    background: #fafafa;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    background-color: #fafafa;
+    padding: 20px 20px;
+    vertical-align: center;
+}
+
+/* Style the header links */
+.header a {
+    float: left;
+    color: #3160B6;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #3160B6;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+    background-color: #3160B6;
+    color: #fafafa;
+}
+
+/* Style the active/current link*/
+.header a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+    float: right;
+}
+
+img {
+    width: 15%;
+    height: 15%;
+    vertical-align: center;
+    margin-right: 3em;
+}
